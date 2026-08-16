@@ -1,5 +1,5 @@
+import html
 import streamlit as st
-import streamlit.components.v1 as components
 
 st.set_page_config(page_title="Web Generator", page_icon="🌐", layout="wide")
 
@@ -71,7 +71,7 @@ menuBtn.addEventListener('click', () => {
     <button class="btn-secondary">Lihat Dokumentasi</button>
   </div>
 </section>""",
-            "css": """body { font-family: system-ui, sans-serif; background: #090d16; color: white; text-align: center; }
+            "css": """body { font-family: system-ui, sans-serif; background: #090d16; color: white; text-align: center; margin: 0; }
 
 .hero { padding: 60px 20px; max-width: 800px; margin: 0 auto; }
 .badge {
@@ -79,12 +79,12 @@ menuBtn.addEventListener('click', () => {
   color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3);
   padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 20px;
 }
-.hero h1 { font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; background: linear-gradient(to right, #ffffff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-.hero p { color: #94a3b8; font-size: 18px; margin-bottom: 30px; line-height: 1.6; }
+.hero h1 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; color: #ffffff; }
+.hero p { color: #94a3b8; font-size: 16px; margin-bottom: 30px; line-height: 1.6; }
 .cta-group { display: flex; gap: 12px; justify-content: center; }
-.btn-primary { background: #2563eb; color: white; border: none; padding: 12px 24px; font-size: 16px; font-weight: 600; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+.btn-primary { background: #2563eb; color: white; border: none; padding: 12px 24px; font-size: 15px; font-weight: 600; border-radius: 8px; cursor: pointer; transition: 0.2s; }
 .btn-primary:hover { background: #1d4ed8; }
-.btn-secondary { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; padding: 12px 24px; font-size: 16px; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+.btn-secondary { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; padding: 12px 24px; font-size: 15px; border-radius: 8px; cursor: pointer; transition: 0.2s; }
 .btn-secondary:hover { background: #334155; }""",
             "js": ""
         }
@@ -103,7 +103,7 @@ menuBtn.addEventListener('click', () => {
   </ul>
   <button class="btn-card">Pilih Paket Pro</button>
 </div>""",
-            "css": """body { font-family: sans-serif; background: #f1f5f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+            "css": """body { font-family: sans-serif; background: #f1f5f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
 
 .card-pricing {
   background: white; border-radius: 16px; padding: 32px; width: 300px;
@@ -113,7 +113,7 @@ menuBtn.addEventListener('click', () => {
   position: absolute; top: -12px; right: 24px; background: #2563eb;
   color: white; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 12px;
 }
-.card-pricing h3 { font-size: 22px; margin-bottom: 12px; color: #0f172a; }
+.card-pricing h3 { font-size: 22px; margin-bottom: 12px; color: #0f172a; margin-top: 0; }
 .price { font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 20px; }
 .price span { font-size: 14px; color: #64748b; font-weight: normal; }
 .features { list-style: none; padding: 0; margin-bottom: 24px; color: #334155; line-height: 2; }
@@ -140,7 +140,7 @@ menuBtn.addEventListener('click', () => {
     </div>
   </div>
 </div>""",
-            "css": """body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+            "css": """body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #f8fafc; }
 
 .btn-open { background: #0f172a; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 15px; }
 
@@ -152,7 +152,7 @@ menuBtn.addEventListener('click', () => {
 .modal-overlay.active { display: flex; }
 
 .modal-content { background: white; padding: 24px; border-radius: 12px; width: 340px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
-.modal-content h3 { margin-bottom: 8px; color: #0f172a; }
+.modal-content h3 { margin-bottom: 8px; color: #0f172a; margin-top: 0; }
 .modal-content p { color: #64748b; font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
 .modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
 .btn-cancel { background: #e2e8f0; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }
@@ -173,7 +173,7 @@ modalOverlay.addEventListener('click', (e) => {
         "Toast Alert System": {
             "html": """<button id="showToastBtn" class="btn-toast">Tampilkan Notifikasi Toast</button>
 <div id="toastContainer" class="toast-container"></div>""",
-            "css": """body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+            "css": """body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #f8fafc; }
 
 .btn-toast { background: #16a34a; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; }
 
@@ -204,7 +204,7 @@ btn.addEventListener('click', () => {
 }
 
 # ==============================================================================
-# MENU PEMILIHAN TERBUKA DI HALAMAN UTAMA (TIDAK DISEMBUNYIKAN)
+# MENU PEMILIHAN TERBUKA DI HALAMAN UTAMA
 # ==============================================================================
 st.markdown("#### 📌 Step 1: Pilih Kategori UI")
 category = st.radio(
@@ -227,7 +227,7 @@ selected_data = templates[category][selected_component_name]
 st.divider()
 
 # ==============================================================================
-# WORKSPACE: SYNTAX EDITOR & LIVE PREVIEW
+# WORKSPACE: SYNTAX EDITOR & LIVE PREVIEW (SRCDOC SAFE IFRAME)
 # ==============================================================================
 col_code, col_preview = st.columns([1, 1])
 
@@ -240,26 +240,29 @@ with col_code:
 with col_preview:
     st.subheader("👁️ Live Preview")
     
-    # Render iframe gabungan HTML, CSS, dan JS secara terisolasi
-    full_preview_html = f"""
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <style>
-        {css_code}
-      </style>
-    </head>
-    <body>
-      {html_code}
-      <script>
-        {js_code}
-      </script>
-    </body>
-    </html>
-    """
+    # Gabungkan HTML, CSS, JS
+    full_preview_html = f"""<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    {css_code}
+  </style>
+</head>
+<body>
+  {html_code}
+  <script>
+    {js_code}
+  </script>
+</body>
+</html>"""
     
-    components.html(full_preview_html, height=480, scrolling=True)
+    # Render menggunakan srcdoc terisolasi (mencegah bug reload Streamlit)
+    escaped_html = html.escape(full_preview_html)
+    iframe_code = f'<iframe srcdoc="{escaped_html}" style="width: 100%; height: 480px; border: 1px solid #334155; border-radius: 8px; background: #ffffff;"></iframe>'
+    
+    st.markdown(iframe_code, unsafe_allow_html=True)
 
 st.divider()
 
