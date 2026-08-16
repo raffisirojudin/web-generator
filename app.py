@@ -1,9 +1,9 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-st.set_page_config(page_title="Frontend Syntax & Component Playground", page_icon="🎨", layout="wide")
+st.set_page_config(page_title="Web Generator", page_icon="🎨", layout="wide")
 
-st.title("🎨 Frontend Syntax & Component Playground")
+st.title("🎨 Web Generator")
 st.caption("Pilih rekomendasi komponen HTML/CSS/JS, sesuaikan kodenya, dan lihat hasil *Live Preview* secara instan.")
 
 # Sidebar untuk Pemilihan Komponen
