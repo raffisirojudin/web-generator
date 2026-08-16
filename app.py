@@ -1,5 +1,5 @@
-import html
 import streamlit as st
+import streamlit.components.v1 as components
 
 st.set_page_config(page_title="Web Generator", page_icon="🌐", layout="wide")
 
@@ -23,7 +23,7 @@ templates = {
   <button class="menu-btn" id="menuBtn">☰</button>
 </nav>""",
             "css": """* { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', sans-serif; background: #f8fafc; }
+body { font-family: 'Segoe UI', sans-serif; background: #ffffff; }
 
 .navbar {
   display: flex;
@@ -54,9 +54,11 @@ body { font-family: 'Segoe UI', sans-serif; background: #f8fafc; }
             "js": """const menuBtn = document.getElementById('menuBtn');
 const navLinks = document.getElementById('navLinks');
 
-menuBtn.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-});"""
+if(menuBtn) {
+  menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+}"""
         }
     },
 
@@ -73,18 +75,18 @@ menuBtn.addEventListener('click', () => {
 </section>""",
             "css": """body { font-family: system-ui, sans-serif; background: #090d16; color: white; text-align: center; margin: 0; }
 
-.hero { padding: 60px 20px; max-width: 800px; margin: 0 auto; }
+.hero { padding: 40px 20px; max-width: 800px; margin: 0 auto; }
 .badge {
   display: inline-block; background: rgba(56, 189, 248, 0.1);
   color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3);
   padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 20px;
 }
-.hero h1 { font-size: 36px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; color: #ffffff; }
-.hero p { color: #94a3b8; font-size: 16px; margin-bottom: 30px; line-height: 1.6; }
+.hero h1 { font-size: 32px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; color: #ffffff; }
+.hero p { color: #94a3b8; font-size: 15px; margin-bottom: 24px; line-height: 1.6; }
 .cta-group { display: flex; gap: 12px; justify-content: center; }
-.btn-primary { background: #2563eb; color: white; border: none; padding: 12px 24px; font-size: 15px; font-weight: 600; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+.btn-primary { background: #2563eb; color: white; border: none; padding: 10px 20px; font-size: 14px; font-weight: 600; border-radius: 8px; cursor: pointer; transition: 0.2s; }
 .btn-primary:hover { background: #1d4ed8; }
-.btn-secondary { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; padding: 12px 24px; font-size: 15px; border-radius: 8px; cursor: pointer; transition: 0.2s; }
+.btn-secondary { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; padding: 10px 20px; font-size: 14px; border-radius: 8px; cursor: pointer; transition: 0.2s; }
 .btn-secondary:hover { background: #334155; }""",
             "js": ""
         }
@@ -106,20 +108,20 @@ menuBtn.addEventListener('click', () => {
             "css": """body { font-family: sans-serif; background: #f1f5f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
 
 .card-pricing {
-  background: white; border-radius: 16px; padding: 32px; width: 300px;
+  background: white; border-radius: 16px; padding: 28px; width: 280px;
   box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); border: 2px solid #2563eb; position: relative;
 }
 .popular-tag {
-  position: absolute; top: -12px; right: 24px; background: #2563eb;
-  color: white; font-size: 12px; font-weight: bold; padding: 4px 12px; border-radius: 12px;
+  position: absolute; top: -12px; right: 20px; background: #2563eb;
+  color: white; font-size: 11px; font-weight: bold; padding: 4px 10px; border-radius: 12px;
 }
-.card-pricing h3 { font-size: 22px; margin-bottom: 12px; color: #0f172a; margin-top: 0; }
-.price { font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 20px; }
-.price span { font-size: 14px; color: #64748b; font-weight: normal; }
-.features { list-style: none; padding: 0; margin-bottom: 24px; color: #334155; line-height: 2; }
+.card-pricing h3 { font-size: 20px; margin-bottom: 8px; color: #0f172a; margin-top: 0; }
+.price { font-size: 28px; font-weight: 800; color: #0f172a; margin-bottom: 16px; }
+.price span { font-size: 13px; color: #64748b; font-weight: normal; }
+.features { list-style: none; padding: 0; margin-bottom: 20px; color: #334155; line-height: 1.8; font-size: 14px; }
 .btn-card {
   width: 100%; background: #2563eb; color: white; border: none;
-  padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s;
+  padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.2s;
 }
 .btn-card:hover { background: #1d4ed8; }""",
             "js": ""
@@ -142,7 +144,7 @@ menuBtn.addEventListener('click', () => {
 </div>""",
             "css": """body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #f8fafc; }
 
-.btn-open { background: #0f172a; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 15px; }
+.btn-open { background: #0f172a; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-size: 14px; }
 
 .modal-overlay {
   display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -151,21 +153,23 @@ menuBtn.addEventListener('click', () => {
 }
 .modal-overlay.active { display: flex; }
 
-.modal-content { background: white; padding: 24px; border-radius: 12px; width: 340px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
-.modal-content h3 { margin-bottom: 8px; color: #0f172a; margin-top: 0; }
-.modal-content p { color: #64748b; font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
+.modal-content { background: white; padding: 20px; border-radius: 12px; width: 300px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+.modal-content h3 { margin-bottom: 8px; color: #0f172a; margin-top: 0; font-size: 18px; }
+.modal-content p { color: #64748b; font-size: 13px; margin-bottom: 16px; line-height: 1.5; }
 .modal-actions { display: flex; justify-content: flex-end; gap: 8px; }
-.btn-cancel { background: #e2e8f0; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }
-.btn-confirm { background: #16a34a; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; }""",
+.btn-cancel { background: #e2e8f0; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+.btn-confirm { background: #16a34a; color: white; border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 13px; }""",
             "js": """const openModal = document.getElementById('openModal');
 const closeModal = document.getElementById('closeModal');
 const modalOverlay = document.getElementById('modalOverlay');
 
-openModal.addEventListener('click', () => modalOverlay.classList.add('active'));
-closeModal.addEventListener('click', () => modalOverlay.classList.remove('active'));
-modalOverlay.addEventListener('click', (e) => {
-  if(e.target === modalOverlay) modalOverlay.classList.remove('active');
-});"""
+if(openModal && closeModal && modalOverlay) {
+  openModal.addEventListener('click', () => modalOverlay.classList.add('active'));
+  closeModal.addEventListener('click', () => modalOverlay.classList.remove('active'));
+  modalOverlay.addEventListener('click', (e) => {
+    if(e.target === modalOverlay) modalOverlay.classList.remove('active');
+  });
+}"""
         }
     },
 
@@ -180,25 +184,26 @@ modalOverlay.addEventListener('click', (e) => {
 .toast-container { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 10px; }
 .toast {
   background: #0f172a; color: white; padding: 12px 20px; border-left: 4px solid #38bdf8;
-  border-radius: 6px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-  animation: slideIn 0.3s ease, fadeOut 0.5s ease 2.5s forwards;
+  border-radius: 6px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); font-size: 14px;
+  animation: slideIn 0.3s ease;
 }
 
-@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }
-@keyframes fadeOut { to { opacity: 0; transform: translateY(10px); } }""",
+@keyframes slideIn { from { transform: translateX(100%); } to { transform: translateX(0); } }""",
             "js": """const btn = document.getElementById('showToastBtn');
 const container = document.getElementById('toastContainer');
 
-btn.addEventListener('click', () => {
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.innerText = '✅ Perubahan berhasil disimpan!';
-  container.appendChild(toast);
+if(btn && container) {
+  btn.addEventListener('click', () => {
+    const toast = document.createElement('div');
+    toast.className = 'toast';
+    toast.innerText = '✅ Perubahan berhasil disimpan!';
+    container.appendChild(toast);
 
-  setTimeout(() => {
-    toast.remove();
-  }, 3000);
-});"""
+    setTimeout(() => {
+      toast.remove();
+    }, 3000);
+  });
+}"""
         }
     }
 }
@@ -227,7 +232,7 @@ selected_data = templates[category][selected_component_name]
 st.divider()
 
 # ==============================================================================
-# WORKSPACE: SYNTAX EDITOR & LIVE PREVIEW (SRCDOC SAFE IFRAME)
+# WORKSPACE: SYNTAX EDITOR & LIVE PREVIEW
 # ==============================================================================
 col_code, col_preview = st.columns([1, 1])
 
@@ -240,7 +245,7 @@ with col_code:
 with col_preview:
     st.subheader("👁️ Live Preview")
     
-    # Gabungkan HTML, CSS, JS
+    # Menyiapkan dokumen HTML lengkap untuk Iframe
     full_preview_html = f"""<!DOCTYPE html>
 <html>
 <head>
@@ -258,11 +263,8 @@ with col_preview:
 </body>
 </html>"""
     
-    # Render menggunakan srcdoc terisolasi (mencegah bug reload Streamlit)
-    escaped_html = html.escape(full_preview_html)
-    iframe_code = f'<iframe srcdoc="{escaped_html}" style="width: 100%; height: 480px; border: 1px solid #334155; border-radius: 8px; background: #ffffff;"></iframe>'
-    
-    st.markdown(iframe_code, unsafe_allow_html=True)
+    # Render menggunakan komponen resmi Streamlit Iframe
+    components.html(full_preview_html, height=450, scrolling=True)
 
 st.divider()
 
