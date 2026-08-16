@@ -7,7 +7,7 @@ st.title("🌐 Web Generator")
 st.caption("Pilih template komponen UI modern di bawah ini, kustomisasi kodenya, dan lihat hasil *Live Preview* secara instan.")
 
 # ==============================================================================
-# DATABASE TEMPLATE KOMPONEN KEPERLUAN WEB MODERN (BERBAGAI VARIASI)
+# DATABASE TEMPLATE KOMPONEN (MUDAH DITAMBAH VARIANT BARU)
 # ==============================================================================
 templates = {
     "🌐 Navigasi & Header": {
@@ -24,11 +24,7 @@ templates = {
 </nav>""",
             "css": """* { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Segoe UI', sans-serif; background: #ffffff; }
-
-.navbar {
-  display: flex; justify-content: space-between; align-items: center;
-  background: #0f172a; padding: 16px 32px; color: white;
-}
+.navbar { display: flex; justify-content: space-between; align-items: center; background: #0f172a; padding: 16px 32px; color: white; }
 .logo { font-size: 20px; font-weight: bold; color: #38bdf8; }
 .nav-links { display: flex; list-style: none; gap: 24px; align-items: center; }
 .nav-links a { color: #94a3b8; text-decoration: none; transition: 0.2s; }
@@ -38,17 +34,12 @@ body { font-family: 'Segoe UI', sans-serif; background: #ffffff; }
 
 @media (max-width: 640px) {
   .menu-btn { display: block; }
-  .nav-links {
-    display: none; flex-direction: column; position: absolute;
-    top: 60px; right: 0; left: 0; background: #0f172a; padding: 20px; text-align: center;
-  }
+  .nav-links { display: none; flex-direction: column; position: absolute; top: 60px; right: 0; left: 0; background: #0f172a; padding: 20px; text-align: center; }
   .nav-links.active { display: flex; }
 }""",
             "js": """const menuBtn = document.getElementById('menuBtn');
 const navLinks = document.getElementById('navLinks');
-if(menuBtn) {
-  menuBtn.addEventListener('click', () => navLinks.classList.toggle('active'));
-}"""
+if(menuBtn) { menuBtn.addEventListener('click', () => navLinks.classList.toggle('active')); }"""
         },
         "Vertical Dashboard Sidebar": {
             "html": """<aside class="sidebar">
@@ -68,7 +59,7 @@ if(menuBtn) {
 .menu-list li:hover, .menu-list li.active { background: #334155; color: white; font-weight: 600; }""",
             "js": ""
         },
-        "Footer with Columns & Socials": {
+        "Footer dengan Kolom Multi-Link": {
             "html": """<footer class="footer">
   <div class="footer-col">
     <h4>Perusahaan</h4>
@@ -115,7 +106,7 @@ if(menuBtn) {
 .btn-secondary { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; padding: 10px 20px; font-size: 14px; border-radius: 8px; cursor: pointer; }""",
             "js": ""
         },
-        "Feature Grid (3 Columns)": {
+        "Feature Grid (3 Kolom)": {
             "html": """<div class="grid-container">
   <div class="feature-card">
     <div class="icon">🚀</div>
@@ -140,6 +131,18 @@ if(menuBtn) {
 .icon { font-size: 28px; margin-bottom: 12px; }
 .feature-card h3 { font-size: 18px; margin-bottom: 8px; color: #0f172a; }
 .feature-card p { font-size: 13px; color: #64748b; line-height: 1.5; margin: 0; }""",
+            "js": ""
+        },
+        "Stat Counter Banner": {
+            "html": """<div class="stats-banner">
+  <div class="stat-item"><h2>10M+</h2><p>Pengguna Aktif</p></div>
+  <div class="stat-item"><h2>99.9%</h2><p>Uptime Server</p></div>
+  <div class="stat-item"><h2>24/7</h2><p>Dukungan Tim</p></div>
+</div>""",
+            "css": """body { font-family: sans-serif; background: #0f172a; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+.stats-banner { display: flex; gap: 40px; text-align: center; background: #1e293b; padding: 24px 40px; border-radius: 16px; border: 1px solid #334155; }
+.stat-item h2 { color: #38bdf8; font-size: 28px; margin: 0; font-weight: 800; }
+.stat-item p { color: #94a3b8; font-size: 13px; margin: 4px 0 0; }""",
             "js": ""
         }
     },
@@ -211,6 +214,60 @@ if(menuBtn) {
 .stats span { font-size: 11px; color: #94a3b8; }
 .btn-follow { background: #0284c7; color: white; border: none; width: 100%; padding: 8px; border-radius: 8px; font-weight: bold; cursor: pointer; }""",
             "js": ""
+        },
+        "Testimonial Review Card": {
+            "html": """<div class="testimonial-card">
+  <div class="stars">⭐⭐⭐⭐⭐</div>
+  <p>"Template ini sangat membantu mempercepat pembuatan landing page kami!"</p>
+  <div class="user-info">
+    <strong>Budi Pratama</strong>
+    <span>Product Designer</span>
+  </div>
+</div>""",
+            "css": """body { font-family: sans-serif; background: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+.testimonial-card { background: white; padding: 24px; border-radius: 12px; width: 280px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
+.stars { font-size: 14px; margin-bottom: 12px; }
+.testimonial-card p { font-size: 13px; color: #334155; line-height: 1.6; font-style: italic; margin-bottom: 16px; }
+.user-info strong { display: block; font-size: 14px; color: #0f172a; }
+.user-info span { font-size: 12px; color: #94a3b8; }""",
+            "js": ""
+        }
+    },
+
+    "📝 Form & Input": {
+        "Clean Sign-In Form": {
+            "html": """<form class="login-form">
+  <h2>Masuk Akun</h2>
+  <div class="input-group">
+    <label>Email</label>
+    <input type="email" placeholder="nama@email.com" required>
+  </div>
+  <div class="input-group">
+    <label>Kata Sandi</label>
+    <input type="password" placeholder="••••••••" required>
+  </div>
+  <button type="button" class="btn-submit">Masuk Sekarang</button>
+</form>""",
+            "css": """body { font-family: sans-serif; background: #f1f5f9; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+.login-form { background: white; padding: 32px; border-radius: 16px; width: 280px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08); }
+.login-form h2 { margin-top: 0; font-size: 20px; color: #0f172a; margin-bottom: 20px; text-align: center; }
+.input-group { margin-bottom: 16px; }
+.input-group label { display: block; font-size: 12px; font-weight: 600; color: #475569; margin-bottom: 6px; }
+.input-group input { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; font-size: 14px; box-sizing: border-box; outline: none; }
+.input-group input:focus { border-color: #2563eb; }
+.btn-submit { width: 100%; background: #2563eb; color: white; border: none; padding: 10px; border-radius: 8px; font-weight: bold; cursor: pointer; }""",
+            "js": ""
+        },
+        "Modern Search Bar with Icon": {
+            "html": """<div class="search-box">
+  <span class="search-icon">🔍</span>
+  <input type="text" placeholder="Cari dokumen atau komponen...">
+</div>""",
+            "css": """body { font-family: sans-serif; background: #f8fafc; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+.search-box { display: flex; align-items: center; background: white; border: 1px solid #cbd5e1; padding: 8px 16px; border-radius: 24px; width: 300px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+.search-icon { margin-right: 10px; opacity: 0.6; }
+.search-box input { border: none; outline: none; width: 100%; font-size: 14px; }""",
+            "js": ""
         }
     },
 
@@ -241,24 +298,19 @@ if(menuBtn) {
             "js": """const openModal = document.getElementById('openModal');
 const closeModal = document.getElementById('closeModal');
 const modalOverlay = document.getElementById('modalOverlay');
-
 if(openModal && closeModal && modalOverlay) {
   openModal.addEventListener('click', () => modalOverlay.classList.add('active'));
   closeModal.addEventListener('click', () => modalOverlay.classList.remove('active'));
-  modalOverlay.addEventListener('click', (e) => {
-    if(e.target === modalOverlay) modalOverlay.classList.remove('active');
-  });
 }"""
         },
         "Slide-Over Drawer (Off-Canvas)": {
             "html": """<button id="openDrawer" class="btn-open">Buka Slide Drawer</button>
-
 <div class="drawer" id="drawer">
   <div class="drawer-header">
     <h3>Pengaturan Panel</h3>
     <button id="closeDrawer" class="close-btn">✕</button>
   </div>
-  <p>Ini adalah area drawer slide-in dari sebelah kanan.</p>
+  <p style="margin-top: 16px; font-size: 14px; color: #64748b;">Area drawer slide-in dari sebelah kanan.</p>
 </div>""",
             "css": """body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #f8fafc; }
 .btn-open { background: #2563eb; color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; }
@@ -270,7 +322,6 @@ if(openModal && closeModal && modalOverlay) {
             "js": """const openDrawer = document.getElementById('openDrawer');
 const closeDrawer = document.getElementById('closeDrawer');
 const drawer = document.getElementById('drawer');
-
 if(openDrawer && closeDrawer && drawer) {
   openDrawer.addEventListener('click', () => drawer.classList.add('open'));
   closeDrawer.addEventListener('click', () => drawer.classList.remove('open'));
@@ -278,7 +329,7 @@ if(openDrawer && closeDrawer && drawer) {
         }
     },
 
-    "🔔 Notifikasi & UI Feedback": {
+    "🔔 Badge & Feedback": {
         "Toast Alert System": {
             "html": """<button id="showToastBtn" class="btn-toast">Tampilkan Notifikasi Toast</button>
 <div id="toastContainer" class="toast-container"></div>""",
@@ -319,10 +370,25 @@ if(btn && container) {
             "js": """const btns = document.querySelectorAll('.acc-btn');
 btns.forEach(btn => {
   btn.addEventListener('click', () => {
-    const item = btn.parentElement;
-    item.classList.toggle('active');
+    btn.parentElement.classList.toggle('active');
   });
 });"""
+        },
+        "Status Badges & Pills": {
+            "html": """<div class="badge-group">
+  <span class="badge success">Active</span>
+  <span class="badge warning">Pending</span>
+  <span class="badge danger">Error</span>
+  <span class="badge info">Beta</span>
+</div>""",
+            "css": """body { font-family: sans-serif; background: #ffffff; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+.badge-group { display: flex; gap: 10px; }
+.badge { padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: bold; }
+.success { background: #dcfce7; color: #15803d; }
+.warning { background: #fef9c3; color: #a16207; }
+.danger { background: #fee2e2; color: #b91c1c; }
+.info { background: #e0f2fe; color: #0369a1; }""",
+            "js": ""
         },
         "Animated Skeleton Loader": {
             "html": """<div class="skeleton-card">
@@ -346,7 +412,7 @@ btns.forEach(btn => {
 }
 
 # ==============================================================================
-# MENU PEMILIHAN TERBUKA DI HALAMAN UTAMA
+# SELEKSI INTERAKTIF HALAMAN UTAMA
 # ==============================================================================
 st.markdown("#### 📌 Step 1: Pilih Kategori UI")
 category = st.radio(
@@ -382,7 +448,6 @@ with col_code:
 with col_preview:
     st.subheader("👁️ Live Preview")
     
-    # Dokumen HTML lengkap untuk render Iframe
     full_preview_html = f"""<!DOCTYPE html>
 <html>
 <head>
@@ -400,7 +465,6 @@ with col_preview:
 </body>
 </html>"""
     
-    # Render menggunakan komponen resmi Streamlit Iframe
     components.html(full_preview_html, height=450, scrolling=True)
 
 st.divider()
